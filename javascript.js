@@ -9,3 +9,8 @@ function getComputerChoice() {
     return rockPepperScissors[getRandomOfNum(3)];
 }
 
+function getHumanChoice() {
+    return prompt('Make choise: rock, papper or scissors');
+}
+
+console.log(getHumanChoice());
