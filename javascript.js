@@ -13,40 +13,43 @@ function getComputerChoice() {
     return rockPepperScissors[getRandomOfNum(3)];
 }
 
-let computerChoice = getComputerChoice();
-
 // function return human choise
 function getHumanChoice() {
     return prompt('Make choise: rock, papper or scissors').toLowerCase();
 }
 
-let humanChoice = getHumanChoice();
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === 'rock' && computerChoice === 'papper') {
         computerScore++;
+        alert('Computer win round');
     } else if (humanChoice === 'rock' && computerChoice === 'scissors') {
         humanScore++;
+        alert('Human win round');
     } else if ( humanChoice === 'rock' && computerChoice === 'rock') {
-        computerScore++;
-        humanScore++;
+        alert('DRAW');
     } else if ( humanChoice === 'papper' && computerChoice === 'rock') {
         humanScore++;
+        alert('Human win round');
     } else if ( humanChoice === 'papper' && computerChoice === 'papper') {
-        computerScore++;
-        humanScore++;
+        alert('DRAW');
     } else if ( humanChoice === 'papper' && computerChoice === 'scissors') {
         computerScore++;
+        alert('Computer win round');
     } else if (humanChoice === 'scissors' && computerChoice === 'rock') {
         computerScore++;
+        alert('Computer win round');
     } else if ( humanChoice === 'scissors' && computerChoice === 'papper') {
         humanScore++;
+        alert('Human win round');
     } else if ( humanChoice === 'scissors' && computerChoice == 'scissors') {
-        computerScore++;
-        humanScore++
+        alert('DRAW');
     }
 
 }
+
+
+let rounds = 5;
 
 // 
  function playGame() {
@@ -55,8 +58,9 @@ function playRound(humanChoice, computerChoice) {
         computerChoice = getComputerChoice();
 
         playRound(humanChoice, computerChoice);
-    } while (humanScore + computerScore < 5);
-    console.log( humanScore > computerScore ? 'Human WIN': 'Computer WIN');
+        rounds--;
+    } while (rounds > 0);
+    alert( humanScore > computerScore ? 'Human WIN': 'Computer WIN');
 }
 
 playGame();
