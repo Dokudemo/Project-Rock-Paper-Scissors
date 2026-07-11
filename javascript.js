@@ -10,7 +10,7 @@ let getRandomOfNum = maxNum => Math.floor(Math.random() * maxNum);
 
 // function return random element from rockPepperScissors arr
 function getComputerChoice() {
-    return rockPepperScissors[getRandomOfNum(3)];
+    return rockPepperScissors[getRandomOfNum(rockPepperScissors.length)];
 }
 
 // function return human choise
