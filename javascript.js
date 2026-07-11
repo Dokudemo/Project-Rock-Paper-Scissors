@@ -45,10 +45,18 @@ function playRound(humanChoice, computerChoice) {
         computerScore++;
         humanScore++
     }
-    console.log(computerScore);
-    console.log(humanScore);
+
 }
 
+// 
+ function playGame() {
+    do {
+        humanChoice = getHumanChoice();
+        computerChoice = getComputerChoice();
 
+        playRound(humanChoice, computerChoice);
+    } while (humanScore + computerScore < 5);
+    console.log( humanScore > computerScore ? 'Human WIN': 'Computer WIN');
+}
 
-playRound(humanChoice, computerChoice);
+playGame();
